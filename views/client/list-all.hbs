@@ -1,0 +1,69 @@
+<h2>Lista Klientów</h2>
+<table>
+    <thead>
+    <tr>
+        <th>
+            E-mail
+        </th>
+        <th>
+            Imię
+        </th>
+        <th>
+            Nazwisko
+        </th>
+        <th>
+            Data następnego kontaktu
+        </th>
+        <th>
+
+        </th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+    {{#each clients}}
+        <tr>
+            <th>
+                <a href="mailto:{{this.mail}}" target="_blank"
+                   style="color: black; text-decoration: none">{{this.mail}}</a>
+
+            </th>
+            <th>
+                <a href="/client/{{this.id}}" style="color: black; text-decoration: none">{{this.name}}</a>
+
+            </th>
+            <th>
+                {{this.surname}}
+            </th>
+            <th>
+                {{this.nextContactAt}}
+            </th>
+            <th>
+                <div class="options">
+                    <a href="/client/{{this.id}}" class="more">Szczegóły</a>
+
+                    <form method="GET" action="/client/form/edit/{{this.id}}">
+                        <button type="submit" class="more">Edytuj</button>
+                    </form>
+
+                    <form method="POST" action="/client/{{this.id}}?_method=DELETE">
+                        <button type="submit" class="more">Usuń</button>
+                    </form>
+                </div>
+            </th>
+        </tr>
+
+    {{/each}}
+
+    </tbody>
+
+</table>
+<p>
+<form method="GET" action="/client/form/add">
+    <button type="submit" class="btn">Dodaj nowego klienta</button>
+</form>
+</p>
+
+
+

@@ -1,0 +1,62 @@
+{{#with client}}
+<h2 class="edit-client">Edytowanie klienta <strong> {{name}} {{surname}} </strong></h2>
+<h3>ID: {{id}}</h3>
+
+<form method="POST" action="/client/{{id}}?_method=PUT">
+
+    <div class="form">
+    <label>
+        <p>
+            E-mail:
+        </p>
+        <p>
+            <input type="email" name="mail" value="{{mail}}" required>
+        </p>
+    </label>
+
+    <label>
+        <p>
+            Imię:
+        </p>
+        <p>
+            <input type="text" name="name" value="{{name}}" required>
+        </p>
+    </label>
+
+    <label>
+        <p>
+            Nazwisko:
+        </p>
+        <p>
+            <input type="text" name="surname" value="{{surname}}" required>
+        </p>
+    </label>
+
+    <label>
+        <p>
+            Data następnego kontaktu:
+        </p>
+        <p>
+            <input type="date" name="nextContactAt" value="{{nextContactAt}}">
+        </p>
+    </label>
+
+    <label>
+        <p>
+            Dodatkowe informacje:
+        </p>
+        <p>
+            <textarea name="notes">{{notes}}</textarea>
+        </p>
+    </label>
+    </div>
+    <div class="btns">
+        <button type="submit" class="btn">Zmień</button>
+
+        {{> go-to-client}}
+    </div>
+
+
+</form>
+
+{{/with}}

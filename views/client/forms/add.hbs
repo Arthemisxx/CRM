@@ -1,0 +1,57 @@
+<h2>Dodawanie nowego klienta do bazy</h2>
+
+<form method="POST" action="/client">
+<div class="form">
+    <label>
+        <p>
+            E-mail:
+        </p>
+        <p>
+            <input type="email" name="mail" required>
+        </p>
+    </label>
+
+    <label>
+        <p>
+            Imię:
+        </p>
+        <p>
+            <input type="text" name="name" required>
+        </p>
+    </label>
+
+    <label>
+        <p>
+            Nazwisko:
+        </p>
+        <p>
+            <input type="text" name="surname" required>
+        </p>
+    </label>
+
+    <label>
+        <p>
+            Data następnego kontaktu:
+        </p>
+        <p>
+            <input type="date" name="nextContactAt">
+        </p>
+    </label>
+
+    <label>
+        <p>
+            Dodatkowe informacje:
+        </p>
+        <p>
+            <textarea name="notes" cols="30" rows="10"></textarea>
+        </p>
+    </label>
+    </div>
+    <div class="btns">
+        <button type="submit" class="btn">Dodaj</button>
+
+        {{> go-to-client}}
+    </div>
+
+
+</form>

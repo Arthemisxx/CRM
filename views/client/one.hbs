@@ -1,0 +1,71 @@
+<h2>{{client.name}} {{client.surname}}</h2>
+
+<table class="oneClient">
+    <tbody>
+    {{#with client}}
+        <tr>
+            <th>
+                E-mail
+            </th>
+            <td>
+                <a href="mailto:{{mail}}" target="_blank" style="color: black; text-decoration: none">{{mail}}</a>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Imię
+            </th>
+            <td>
+                {{name}}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Nazwisko
+            </th>
+            <td>
+                {{surname}}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Data następnego kontaktu
+            </th>
+            <td>
+                {{nextContactAt}}
+            </td>
+        </tr>
+
+        {{#if notes}}
+            <tr>
+                <th>
+                    Dodatkowe informacje
+                </th>
+                <td>
+                    {{notes}}
+                </td>
+            </tr>
+        {{/if}}
+
+
+    {{/with}}
+    </tbody>
+
+</table>
+
+<div class="btns">
+<form method="POST" action="/client/{{client.id}}?_method=DELETE">
+    <button type="submit" class="btn">Usuń klienta</button>
+</form>
+
+<form method="GET" action="/client/form/edit/{{client.id}}">
+    <button type="submit" class="btn">Edytuj</button>
+</form>
+    {{> go-to-client}}
+
+</div>
+
+
+
+
+

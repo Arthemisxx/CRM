@@ -1,0 +1,113 @@
+*{
+font-family: Poppins;
+}
+
+table {
+    width: 70%;
+    border-collapse: collapse;
+}
+
+.oneClient {
+    width: 50%;
+}
+th{
+    border-bottom: 1px solid;
+    padding: 7px;
+    text-align: left;
+    font-weight: normal;
+}
+thead th{
+    font-weight: bold;
+}
+
+tbody tr:hover {background-color: #f8efe9;}
+
+.more{
+    text-decoration: none;
+    color: #887164;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.oneClient tr{
+    border-bottom: 1px solid;
+}
+
+.oneClient th{
+    font-weight: bold;
+   width: 40%;
+}
+
+.oneClient tr:hover {
+    background-color: unset
+}
+
+
+.options{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+button{
+    margin-left: 10px;
+    background-color: unset;
+    border: none;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.home{
+    color: black;
+    text-decoration: none;
+}
+
+.btn{
+    color: #887164;
+    font-size: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #eee2d3;
+    padding: 7px;
+    text-align: center;
+    margin: 10px;
+    border-radius: 2px;
+    display: inline-block;
+
+}
+
+.btns{
+    margin: 10px;
+    display: flex;
+
+}
+
+hr{
+    border-top: 1px solid black;
+}
+
+.form{
+    margin-left: 10px;
+    margin-top: 20px;
+    /*border: 1px solid #887164;*/
+    /*border-radius: 5px;*/
+    width: 25%;
+    /*padding: 30px;*/
+}
+
+input, textarea{
+    width: 80%;
+    border: 3px solid #c9b7a8;
+    border-radius: 3px;
+    padding: 7px;
+}
+
+input:focus{
+    border: 3px solid #887164;
+}
+
+.edit-client{
+    font-weight: normal;
+}
+
