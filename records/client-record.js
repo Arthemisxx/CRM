@@ -3,13 +3,16 @@ const {ValidationError} = require("../utils/error");
 class ClientRecord {
     constructor(obj) {
         const {id, mail, name, nextContactAt, notes, surname} = obj;
+        const today = new Date().toLocaleDateString('en-ca');
+        console.log(today)
+        console.log(nextContactAt)
 
         if(!id || typeof id !=='string'){
             throw new ValidationError('ID musi być niepustym tekstem')
         }
 
-        if(!name || typeof name !=='string' || name.length <3){
-            throw new ValidationError('Imię musi być tekstem o długości min. 3 znaków.')
+        if(!name || typeof name !=='string' || name.length <2){
+            throw new ValidationError('Imię musi być tekstem o długości min. 2 znaków.')
         }
 
         if(!surname || typeof surname !=='string' || surname.length <3){
@@ -20,8 +23,8 @@ class ClientRecord {
             throw new ValidationError('Email nieprawidłowy')
         }
 
-        if(typeof nextContactAt !=='string'){
-            throw new ValidationError('Data następnego kontaktu musi być tekstem')
+        if(typeof nextContactAt !=='string' || nextContactAt < today){
+            throw new ValidationError('Data nieprawidłowa')
         }
 
         if(typeof notes !=='string'){

@@ -31,6 +31,7 @@ clientRouter
                 name: req.body.name,
                 surname: req.body.surname,
                 id,
+
             })
     })
 
@@ -57,7 +58,9 @@ clientRouter
     })
 
     .get('/form/add', (req, res) => {
-        res.render('client/forms/add')
+        res.render('client/forms/add', {
+            minDate: new Date().toLocaleDateString('en-ca'),
+        })
     })
 
     .get('/form/edit/:id', (req, res) => {
